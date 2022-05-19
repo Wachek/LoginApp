@@ -101,7 +101,7 @@
         <!--WelcomeViewController-->
         <scene sceneID="7BN-fd-se1">
             <objects>
-                <viewController title="WelcomeViewController" id="75h-bK-TQZ" sceneMemberID="viewController">
+                <viewController title="WelcomeViewController" id="75h-bK-TQZ" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SbE-HZ-EVL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="wt8-oH-4Wf" kind="unwind" unwindAction="unwindFor:" id="JhY-Ve-mW0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🖖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mSc-QK-kCq">
                                 <rect key="frame" x="157" y="198" width="100" height="135"/>
@@ -144,8 +147,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ndg-a6-1Wc"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="pzK-NK-Y8c" id="XSl-HJ-0gW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rf-IL-Gkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wt8-oH-4Wf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1663.7681159420292" y="83.705357142857139"/>
         </scene>

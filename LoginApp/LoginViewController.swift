@@ -14,9 +14,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else {
+            return
+        }
+        welcomeVC.welcomeText = "Welcome, \(userNameTextField.text ?? "")!"
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
     @IBAction func loginButtonPressed() {
         
         textFormatCheck(for: userNameTextField.text)
@@ -34,13 +46,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func forgotNameButtonPressed() {
-        showAlert(with: "Uuups!", and: "Your user name is User")
+        showAlert(with: "Oops!", and: "Your user name is User")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(with: "Uuups!", and: "Your password is Password")
+        showAlert(with: "Oops!", and: "Your password is Password")
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
 }
 
 extension ViewController {
