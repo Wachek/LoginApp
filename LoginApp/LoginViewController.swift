@@ -7,10 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
+    private let user = "User"
+    private let password = "Password"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +26,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard let welcomeVC = segue.destination as? WelcomeViewController else {
             return
         }
-        welcomeVC.welcomeText = "Welcome, \(userNameTextField.text ?? "")!"
+        welcomeVC.user = user
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        passwordTextField.becomeFirstResponder()
+        if textField == userNameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            loginButtonPressed()
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        }
         return true
     }
     
@@ -41,12 +49,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textFormatCheck(for: userNameTextField.text)
         textFormatCheck(for: passwordTextField.text)
         
-        guard userNameTextField.text == "User" else {
+        guard userNameTextField.text == user else {
             showAlert(with: "Wrong user name or password", and: "Please, enter correct user name and password")
             return
         }
         
-        guard passwordTextField.text == "Password" else {
+        guard passwordTextField.text == password else {
             showAlert(with: "Wrong user name or password", and: "Please, enter correct user name and password")
             return
         }
@@ -67,7 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension ViewController {
+extension LoginViewController {
     
     private func showAlert(with title: String, and massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
