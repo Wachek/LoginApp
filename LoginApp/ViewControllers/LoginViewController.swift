@@ -34,20 +34,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         profileVC.age = user.person.age
                         profileVC.hobbies = user.person.hobbies
                     }
-//                    else {
-//                        for viewController in navigationVC.viewControllers {
-//                            if let ageVC = viewController as? AgeViewController {
-//                                ageVC.userAge = user.person.age
-//                            }
-//                        }
-//                    }
                 }
             }
         }
-        //        guard let welcomeVC = segue.destination as? WelcomeViewController else {
-        //            return
-        //        }
-        //        welcomeVC.user = user.person.name
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

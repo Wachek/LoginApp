@@ -5,6 +5,8 @@
 //  Created by Вячеслав Турчак on 25.05.2022.
 //
 
+
+
 struct User {
     let login: String
     let password: String
@@ -27,7 +29,6 @@ struct User {
 struct Person {
     let name: String
     let lastname: String
-//    let photo: UIImage!
     let age: Int
     let hobbies: [String]
 }
