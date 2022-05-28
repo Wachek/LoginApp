@@ -172,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="OIL-mh-CO6">
-                                <rect key="frame" x="96" y="234" width="128" height="134"/>
+                                <rect key="frame" x="96" y="234" width="128" height="213.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-3q-YKe">
                                         <rect key="frame" x="25.5" y="0.0" width="77.5" height="54.5"/>
@@ -196,6 +196,17 @@
                                             <segue destination="fRh-7A-1IN" kind="show" id="XbA-B2-ChF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oF2-u9-eWc">
+                                        <rect key="frame" x="14.5" y="159" width="99" height="54.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Photo">
+                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="2FY-kd-dcg" kind="show" id="VRQ-eF-e8o"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -217,6 +228,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUx-XN-SSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4035" y="84"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="Lur-X2-Cwa">
+            <objects>
+                <viewController id="2FY-kd-dcg" customClass="PhotoViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRK-Ap-tl9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCm-vC-fDG">
+                                <rect key="frame" x="60" y="156" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cUF-ao-4s9"/>
+                                    <constraint firstAttribute="height" constant="200" id="mvX-io-IRS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N3F-vr-8C8"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="bCm-vC-fDG" firstAttribute="centerX" secondItem="jRK-Ap-tl9" secondAttribute="centerX" id="vgV-NT-vMG"/>
+                            <constraint firstItem="bCm-vC-fDG" firstAttribute="top" secondItem="N3F-vr-8C8" secondAttribute="top" constant="50" id="zLo-v2-x6e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="Arh-KS-bbq"/>
+                    <connections>
+                        <outlet property="imageView" destination="bCm-vC-fDG" id="iip-Ac-850"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HxS-Sy-UhV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4884" y="-599"/>
         </scene>
         <!--AgeVC-->
         <scene sceneID="j5E-Wt-P5r">

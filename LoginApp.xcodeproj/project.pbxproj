@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3026702842819200EDF81A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B30266F2842819200EDF81A /* PhotoViewController.swift */; };
 		8B85A89828302E56000E8572 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85A89728302E56000E8572 /* AppDelegate.swift */; };
 		8B85A89A28302E56000E8572 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85A89928302E56000E8572 /* SceneDelegate.swift */; };
 		8B85A89C28302E56000E8572 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85A89B28302E56000E8572 /* LoginViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B30266F2842819200EDF81A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		8B85A89428302E56000E8572 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B85A89728302E56000E8572 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B85A89928302E56000E8572 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				8B9D3DA92842349000567921 /* MyProfileVC.swift */,
 				8B9D3DAB28423CDB00567921 /* AgeViewController.swift */,
 				8B9D3DAD28423CED00567921 /* HobbiesViewController.swift */,
+				8B30266F2842819200EDF81A /* PhotoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				8B85A89C28302E56000E8572 /* LoginViewController.swift in Sources */,
 				8B9D3DAC28423CDB00567921 /* AgeViewController.swift in Sources */,
 				8B85A8AC2836C38D000E8572 /* WelcomeViewController.swift in Sources */,
+				8B3026702842819200EDF81A /* PhotoViewController.swift in Sources */,
 				8B85A89828302E56000E8572 /* AppDelegate.swift in Sources */,
 				8B9D3DA8283EBB1E00567921 /* User.swift in Sources */,
 				8B85A89A28302E56000E8572 /* SceneDelegate.swift in Sources */,

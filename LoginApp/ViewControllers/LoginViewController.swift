@@ -33,6 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         profileVC.userLastname = user.person.lastname
                         profileVC.age = user.person.age
                         profileVC.hobbies = user.person.hobbies
+                        profileVC.photo = user.person.photo
                     }
                 }
             }

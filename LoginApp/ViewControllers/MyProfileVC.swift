@@ -15,6 +15,7 @@ class MyProfileVC: UIViewController {
     var userLastname = ""
     var age = 0
     var hobbies: [String] = []
+    var photo = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class MyProfileVC: UIViewController {
             ageVC.userAge = age
         } else if let hobbiesVC = segue.destination as? HobbiesViewController {
             hobbiesVC.userHobbies = hobbies
+        } else if let photoVC = segue.destination as? PhotoViewController {
+            photoVC.imageName = photo
         }
     }
 }

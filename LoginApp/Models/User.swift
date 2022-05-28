@@ -20,7 +20,8 @@ struct User {
                 name: "Viacheslav",
                 lastname: "Turchak",
                 age: 30,
-                hobbies: ["Programming", "Music", "Sport"]
+                hobbies: ["Programming", "Music", "Sport"],
+                photo: "yoda"
             )
         )
     }
@@ -31,5 +32,6 @@ struct Person {
     let lastname: String
     let age: Int
     let hobbies: [String]
+    let photo: String
 }
 
