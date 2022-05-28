@@ -12,8 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = "User"
-    private let password = "Password"
+    private let user = User.createUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +22,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {
-            return
+        let tabBarController = segue.destination as! UITabBarController
+        if let viewControllers = tabBarController.viewControllers {
+            for viewController in viewControllers {
+                if let welcomeVC = viewController as? WelcomeViewController {
+                    welcomeVC.user = user.person.name
+                } else if let navigationVC = viewController as? UINavigationController {
+                    if let profileVC = navigationVC.topViewController as? MyProfileVC {
+                        profileVC.userName = user.person.name
+                        profileVC.userLastname = user.person.lastname
+                        profileVC.age = user.person.age
+                        profileVC.hobbies = user.person.hobbies
+                    }
+//                    else {
+//                        for viewController in navigationVC.viewControllers {
+//                            if let ageVC = viewController as? AgeViewController {
+//                                ageVC.userAge = user.person.age
+//                            }
+//                        }
+//                    }
+                }
+            }
         }
-        welcomeVC.user = user
+        //        guard let welcomeVC = segue.destination as? WelcomeViewController else {
+        //            return
+        //        }
+        //        welcomeVC.user = user.person.name
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -49,12 +70,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textFormatCheck(for: userNameTextField.text)
         textFormatCheck(for: passwordTextField.text)
         
-        guard userNameTextField.text == user else {
+        guard userNameTextField.text == user.login else {
             showAlert(with: "Wrong user name or password", and: "Please, enter correct user name and password")
             return
         }
         
-        guard passwordTextField.text == password else {
+        guard passwordTextField.text == user.password else {
             showAlert(with: "Wrong user name or password", and: "Please, enter correct user name and password")
             return
         }

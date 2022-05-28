@@ -160,7 +160,7 @@
         <!--My profile-->
         <scene sceneID="zJG-br-YNR">
             <objects>
-                <viewController title="My profile" id="3ep-hu-GaF" sceneMemberID="viewController">
+                <viewController title="My profile" id="3ep-hu-GaF" customClass="MyProfileVC" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T5B-LR-QR5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,11 +175,11 @@
                                 <rect key="frame" x="96" y="234" width="128" height="213.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmV-x2-tjB">
-                                        <rect key="frame" x="14" y="0.0" width="100" height="54.5"/>
+                                        <rect key="frame" x="14.5" y="0.0" width="99" height="54.5"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Photo">
-                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="fVK-IZ-lVL" kind="show" id="y0b-cY-DDh"/>
@@ -190,7 +190,7 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Age">
-                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="HLf-Eb-wrc" kind="show" id="wt2-jp-vrG"/>
@@ -201,7 +201,7 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Hobbies">
-                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="fRh-7A-1IN" kind="show" id="XbA-B2-ChF"/>
@@ -221,6 +221,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My profile" id="pEy-Xc-nZ7"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="lbv-dO-R93" id="WVV-aj-gYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUx-XN-SSL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,7 +261,7 @@
         <!--AgeVC-->
         <scene sceneID="j5E-Wt-P5r">
             <objects>
-                <viewController title="AgeVC" id="HLf-Eb-wrc" sceneMemberID="viewController">
+                <viewController title="AgeVC" id="HLf-Eb-wrc" customClass="AgeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VBa-f2-aXN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,6 +282,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Age" id="KuL-MX-L6u"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="zvr-Yf-ghf" id="emL-m6-ymI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZI-yb-xtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,13 +293,13 @@
         <!--HobbiesVC-->
         <scene sceneID="YpK-1A-LvL">
             <objects>
-                <viewController title="HobbiesVC" id="fRh-7A-1IN" sceneMemberID="viewController">
+                <viewController title="HobbiesVC" id="fRh-7A-1IN" customClass="HobbiesViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wCM-BS-lHr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobbies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-FX-Kzp">
-                                <rect key="frame" x="30" y="156" width="260" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobbies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-FX-Kzp">
+                                <rect key="frame" x="30" y="156" width="260" height="40.5"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -308,17 +314,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hobbies" id="PB1-xc-YW2"/>
+                    <connections>
+                        <outlet property="hobbiesLabel" destination="dAf-FX-Kzp" id="yWQ-f5-4Ul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRb-oN-9ct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4885" y="754"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--WelcomeBC-->
         <scene sceneID="jlu-VX-xsi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aaW-e3-Q46" sceneMemberID="viewController">
+                <tabBarController title="WelcomeBC" automaticallyAdjustsScrollViewInsets="NO" id="aaW-e3-Q46" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="srz-NB-VYU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -333,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="1663.7681159420292" y="83.705357142857139"/>
         </scene>
-        <!--My profile-->
+        <!--MyProfileNC-->
         <scene sceneID="qN3-pB-WJO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z9s-HC-eWd" sceneMemberID="viewController">
+                <navigationController title="MyProfileNC" automaticallyAdjustsScrollViewInsets="NO" id="z9s-HC-eWd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My profile" image="person" catalog="system" id="fY4-IR-69A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fqS-F6-OF8">
